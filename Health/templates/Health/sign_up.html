@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content%}
+<div class="signup-form-container">
+    <h1>Sign Up</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+
+        <div class="form-group">
+            <label for="username">{{field.label}}</label>
+            {{field}}
+
+        </div>
+        {%endfor%}
+        <div class="form-group">
+            <input type="submit" value="Sign Up" class="btn btn-primary">
+        </div>
+    </form>
+    <p>Have an account <a href="{%url 'home'%}">Log in</a></p>
+
+</div>
+
+{% endblock %}

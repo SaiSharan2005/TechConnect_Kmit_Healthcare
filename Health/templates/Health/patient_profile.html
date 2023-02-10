@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="add_home_detail">
+    <div class="left_home_wel">Hi {{form.user_name}},</div>
+    <!-- <div class="right_home_mem">
+    </div> -->
+    <div class="right_home_mem">
+        <a href="{% url 'choice_acc' %}">Change Member</a>
+        <a href="{% url 'add_remainder' %}">+ Add Remainder</a>
+        <a href="{% url 'patient_form' %}">+ Add Member</a>
+        <a href="{% url 'medical_form' form.user_name  %}">+ Add Report</a>
+    </div>
+</div>
+
+
+<div class="choice_acc">
+    <div class="parent_choice_acc">
+        <div class="left">
+            <img src="{{form.profile_pic.url}}" alt="" ,width="100px">
+        </div>
+        <div class="child_acc">
+            <p>Your name :{{form.user_name}}</p>
+            <p>D.O.B : {{form.Date_of_birth}}</p>
+            <p>Father Name :{{form.father_name}}</p>
+            <!-- </a> -->
+            <!-- <p>He is Your {{field.user_relationship}}</p> -->
+
+        </div>
+    </div>
+</div>
+
+<h1> Your Medical Report</h1>
+<div class="medical_show">
+    {% for divs in medical_report %}
+    <div class="box2">
+        <!-- <div class="box_med_report"> -->
+        <a href="{% url 'medical_form_view' divs.id %}">
+            <div class="username_view_medi">
+                <p>{{divs.Report_name}}</p>
+            </div>
+            <div class="p-1">
+                <p class="p-1">Hospital: {{divs.Hospital}}</p>
+                <p class="p-1">Doctor name: {{divs.Doctor_name}}</p>
+            </div>
+
+            <p>{{divs.description|truncatewords:20}}</p>
+         
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+
+</div>
+
+{% endblock content %}

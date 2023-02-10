@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-picture">
+            <img src="{{form.Profile_pic.url}}" alt="not found" />
+        </div>
+        <h1 class="profile-name">Dr. {{form.Name}}</h1>
+        <p class="profile-title">{{form.Profession}}</p>
+    </div>
+    <div class="profile-info">
+        <h2>About Me</h2>
+        <p>{{form.About_me}}</p>
+        <h2>Education and Training</h2>
+        <p>{{form.Education_from}}</p>
+        <h2>Specialties</h2>
+        <p>{{form.Profession}}</p>
+        <h2>Contact Information</h2>
+        <p>Email: {{form.email}}</p>
+        <p>Phone: {{form.mobile_number}}</p>
+        <p>Office address: {{form.street}},{{form.city}} ,{{form.state}} ,{{form.country}} 00000</p>
+    </div>
+</div>
+{% if opt == False %}
+<div class="doc_to_patient">
+    <a href="{% url 'Request_doc' form.id %}">Consult Doctor</a>
+</div>
+
+{% else %}
+<div class="signup-form-container">
+   
+<form action="" method="POST">
+    {% csrf_token %}
+    <select name="option_sel" class="idk">
+        {% for usr in form_patient %}
+        <option value="{{usr}}" >{{usr}}</option>
+        {% endfor %}
+    </select>
+    {% for fields in form_data %}
+    <div class="form-group">
+        <!-- <label for=""></label> -->
+        {{fields}}
+    </div>
+
+    {% endfor %}
+    <input type="submit" value="Send Request" class="btn btn-primary">
+
+</form>
+</div>
+{% endif %}
+
+
+<!-- <div class="consult_doc_by_patient">
+    <button type = "submit" >Consulte this doctor</button>
+</div> -->
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'main_doc.html' %}
+{% block content %}
+<div class="doc_patient_req">
+    {% for field in form %}
+    <a href="{% url 'doctoc_prepare_form' field.id %}">
+        <div class="child_doc_pat">
+            <p class="child_doc_pat_left">{{field.Patient_name}}</p>
+            <!-- <label for="username">{{field.Patient_name}}</label> -->
+            <p class="child_doc_pat_right">{{field.message_to_doc}}</p>
+        </div>
+    </a>
+    {%endfor%}
+
+</div>
+{% endblock %}

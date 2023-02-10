@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="signup-form-container ">
+    <h2>Your Report</h2>
+    <div class="extra_medi_data_parent">
+        <div class="extra_medi_data_child_left">
+            <p>Name of Person : </p>
+        </div>
+        <div class="extra_medi_data_child_right">
+            <p>{{form_data.person}}</p>
+        </div>
+    </div>
+    <div class="extra_medi_data_parent">
+        <div class="extra_medi_data_child_left">
+            <p>Repot Name : </p>
+        </div>
+        <div class="extra_medi_data_child_right">
+            <p>{{form_data.Report_name}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="signup-form-container">
+    <h2>Your Extra Value</h2>
+    {% for fields in form %}
+
+    <div class="extra_medi_data">
+        <div class="extra_medi_data_parent">
+            <div class="extra_medi_data_child_left">
+                <p>{{fields.parameter_name}} :
+                <p>
+            </div>
+            <div class="extra_medi_data_child_right">
+                <p>{{fields.parameters_value}}</p>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+
+</div>
+<div class="signup-form-container">
+    <form method="POST">
+        {% csrf_token %}
+        {% for fields in form_entry %}
+        <div class="form-group">
+            <label for="">{{fields.label}}</label>
+            {{fields}}
+
+        </div>
+        {% endfor %}
+        <input type="submit" value="Save Form" name="choice">
+        <input type="submit" value="Add">
+
+    </form>
+</div>
+
+
+<style>
+    .signup-form-container .extra_medi_data_parent {
+        display: flex;
+
+        /* background-color: #4CAF50; */
+        flex-direction: row;
+    }
+
+    .signup-form-container .extra_medi_data_parent .extra_medi_data_child_left {
+        width: 40%;
+        font-size: 20px;
+
+    }
+
+    .signup-form-container .extra_medi_data_parent .extra_medi_data_child_right {
+        display: flex;
+        justify-content: center;
+        font-size: 19px;
+
+
+    }
+</style>
+
+{% endblock content %}

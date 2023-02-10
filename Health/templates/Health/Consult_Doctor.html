@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content%}
+
+
+<div class="choice_acc">
+    {%for field in all_doc %}
+    <a href="{% url 'doctor_data' field.id %}">
+        <div class="parent_choice_acc">
+            <div class="left">
+                <img src="{{field.Profile_pic.url}}" alt="" ,width="100px">
+            </div>
+            <div class="child_acc">
+
+                <p class="p-10px">Doctor Name : {{field.Name}}</p>
+                <p class="p-10px">Profession : {{field.Profession}}</p>
+                <p class="p-10px">{{field.About_me}}</p>
+    </a>
+</div>
+</div>
+</a>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content%}
+
+<div class="signup-form-container">
+    <h1>Form</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+
+        <div class="form-group">
+            <label>{{field.label}}</label>
+            {{field}}
+
+        </div>
+        {%endfor%}
+        <div class="form-group">
+            <input type="submit" value="Save Form" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

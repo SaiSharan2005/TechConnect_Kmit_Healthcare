@@ -1,0 +1,22 @@
+{%extends 'main.html'%}
+{% block content %}
+{% load static %}
+
+<form action="" method="POST">
+  <div class="column">
+    {%csrf_token%}
+    <label>Doctor
+       <img class="image-type" src="{% static 'images/doctor.png' %}" onclick="document.getElementById('img1').checked = true;">
+      <input type="radio" id="img1" name="image" value="doctor" required>
+    </label>
+    <label>Patient
+      <img class="image-type" src="{% static 'images/patient.png' %}" onclick="document.getElementById('img2').checked = true;">
+      <input type="radio" id="img2" name="image" value="patient" required>
+    </label>
+  </div>
+  <div class="button_idk">
+  <button class="button_user_sel" type="submit">Submit</button>
+</div>
+</form>
+
+{% endblock %}

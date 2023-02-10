@@ -1,0 +1,17 @@
+<nav>
+    <div class="left-side">
+      <a href="#">TAHC</a>
+    </div>
+    <div class="right-side">
+      <a href="{% url 'home' %}">Home</a>
+      <!-- <a href="{% url 'consult_doctor' %}">Consult Doctor</a>
+      <a href="{% url 'all_medical_history' %}">Medical History</a> -->
+      <a href="{% url 'patient_doc' %}">Patients</a>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'log_out'  %}" id="login-link">LogOut</a>
+      {%else %}
+      <a href="{% url 'log_in'  %}" id="login-link">LogIn</a>
+      {% endif%}
+
+    </div>
+  </nav>

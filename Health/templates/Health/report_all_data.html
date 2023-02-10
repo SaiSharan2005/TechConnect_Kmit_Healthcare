@@ -1,0 +1,29 @@
+{%extends 'main.html' %}
+{% block content%}
+<h1>This is all of your Medical Report</h1>
+<div class="medical_show">
+    {% for divs in doc_data %}
+    <div class="box2">
+        <!-- <div class="box_med_report"> -->
+        <a href="{% url 'medical_form_view' divs.id %}">
+            <div class="username_view_medi">
+                <p>{{divs.Report_name}}</p>
+            </div>
+            <div class="p-1">
+                <p class="p-1">Hospital: {{divs.Hospital}}</p>
+            </div>
+            <p>{{divs.description|truncatewords:20}}</p>
+            <!-- <ul>
+                <li>Hospital : {{divs.Hospital}}</li>
+                <li>Doctor Name: {{divs.Doctor_name}}</li>
+            </ul> -->
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+
+</div>
+{% endblock %}

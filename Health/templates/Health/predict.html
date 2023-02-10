@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="signup-form-container">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Predict wheather you are effected by covid or not ?</h1>
+        <div class="main_medical">
+            {% for field in form_basic %}
+            <div class="form-group">
+                {{field.label}}
+            </div>
+            <div>
+                {{field}}
+            </div>
+            {% endfor %}
+        </div>
+       
+        <input type="submit" value="Save Form">
+    </form>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="signup-form-container">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Medical Report</h1>
+        <div class="main_medical">
+            {% for field in form_basic %}
+            <div class="form-group">
+                {{field.label}}
+            </div>
+            <div>
+                {{field}}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="buttoncl">
+            <input type="submit" class="Add_extra_value" name="Add_extra_value" value="Add Extra Value">
+        </div>
+        <input type="submit" value="Save Form">
+    </form>
+</div>
+
+
+{% endblock content %}

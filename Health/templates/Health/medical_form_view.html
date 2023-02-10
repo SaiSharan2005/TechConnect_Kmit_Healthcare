@@ -1,0 +1,158 @@
+{% extends 'main.html' %}
+{% block content%}
+<h1>Your Medical Form</h1>
+<div class="medical_form_show">
+    <h1>This is your Medical Report </h1>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Person name:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.person}}
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Description:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.description|truncatewords:20}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Report name:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Report_name}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Hospital:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Hospital}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Doctor Name:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Doctor_name}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Date of scan :</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Date_of_scan}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Date Recieved :</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Date_of_recieved}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p>Presciption:</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.doctor_prescription|truncatewords:20}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p>Blood Pressure :</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Blood_pressure}}
+            </p>
+        </div>
+    </div>
+    <div class="medi_detail">
+        <div class="label">
+            <p> Sugar Level :</p>
+        </div>
+        <div class="value">
+            <p>
+                {{ data_medi.Sugar_level}}
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="medical_form_show">
+    <h1>Extra Data</h1>
+    {% for fields in extra_data_medi %}
+    <div class="medi_detail">
+        <div class="label">
+            <p>{{fields.parameter_name}}</p>
+        </div>
+        <div class="value">
+            <p>{{fields.parameters_value}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+<div class="medical_form_show">
+    <h1>Data add By Doctor</h1>
+    <div class="flex-lmr">
+        <div class="left">
+            <p>Medician Name</p>
+        </div>
+        <div class="middle">
+            <p>Medician Quantity</p>
+        </div>
+        <div class="right">
+            <p>Medical Time</p>
+        </div>
+    </div>
+    {% for fields in data_added_by_doctor %}
+    <div class="flex-lmr">
+        <div class="left">
+            <p>{{fields.parameter_name}}</p>
+        </div>
+        <div class="middle">
+            <p>{{fields.parameters_value}}</p>
+        </div>
+        <div class="right">
+            <p>{{fields.parameter_date_time}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock %}

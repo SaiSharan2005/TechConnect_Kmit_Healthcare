@@ -1,0 +1,13 @@
+<div class="thop">
+    <h2>Presciption</h2>
+    {% if data is not None %}
+    {% for field in data %}
+    <div class="form_doc_pat">
+
+        <div class="left_doc"><p>{{field.parameter_name}}</p></div>
+        <div class="middle"><p>{{field.parameters_value}}</p></div>
+        <div class="right"><p>{{field.parameter_date_time}}</p></div>
+    </div>
+    {% endfor %}
+    {%endif%}
+</div>

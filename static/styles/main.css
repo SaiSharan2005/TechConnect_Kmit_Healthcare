@@ -1,0 +1,442 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #3cbc3c;
+  color: rgb(47, 226, 47);
+  /* width: 100vw; */
+}
+
+.left-side img {
+  width: 50px;
+  height: auto;
+}
+
+.left-side a {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.right-side a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* sign_up */
+.signup-form-container {
+  width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+}
+
+.signup-form-container input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-form-container .Add_extra_value {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+
+.btn {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.add_home_detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add_home_detail .left_home_wel {
+  margin: 20px 20px;
+  font-size: 25px;
+}
+
+.add_home_detail .right_home_mem {
+  margin: 20px 5px;
+  font-size: 20px;
+}
+
+.add_home_detail .right_home_mem a {
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: #57dc5d;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .signup-form-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+/* type_user */
+/* Responsive layout for mobile devices */
+.column {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Style the images */
+.image-type {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Add a hover effect for the selected image */
+.image-type:hover {
+  border: 2px solid #ddd;
+}
+
+.column {
+  display: flex;
+  justify-content: space-around;
+  height: 60vh;
+}
+
+/* Style the radio buttons */
+input[type="radio"] {
+  display: none;
+}
+
+.button_idk {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.button_idk button {
+  width: 20vw;
+  height: 40px;
+  background-color: #69c169;
+  border: 3px solid black;
+  border-radius: 50px;
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+.button_idk button:hover {
+  background-color: #3baf40;
+}
+
+/* choice_acc_for_patient */
+.choice_acc {
+  margin: 30px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 90vw;
+
+}
+
+.choice_acc .parent_choice_acc {
+
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 20px 20px;
+  padding: 4px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.choice_acc .left {
+  display: flex;
+  /* width: 200px; */
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+.choice_acc .left img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.choice_acc .child_acc {
+  width: 40vw;
+  margin: 0px 20px;
+
+}
+
+.choice_acc .child_acc a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.choice_acc .child_acc p {
+  font-size: 20px;
+
+}
+
+.choice_acc .child_acc .p-10px {
+  font-size: 15px;
+}
+
+/* doctor_profile */
+.profile-container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.profile-container .profile-header {
+  text-align: center;
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.profile-name {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.profile-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.profile-container .profile-info {
+  margin-top: 50px;
+}
+
+.profile-info h2 {
+  margin-top: 30px;
+}
+
+/* patient profile medical report */
+
+.medical_show {
+  margin: 20px 20px;
+  width: 80vw;
+  padding: 2px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 10px auto;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+.medical_show .box2 {
+  /* display:flex; */
+  margin: 10px 20px;
+  width: 80vw;
+
+  padding: 7px 5px;
+  border: 2px black solid;
+  border-radius: 10px;
+
+}
+
+.p-0 {
+  font-size: 17px;
+}
+
+
+.medical_show .box2 .username_view_medi {
+  margin: 2px 0px 6px -20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box2 a {
+  text-decoration: none;
+  color: black
+}
+
+.medical_show .box2 p {
+  margin: 4px 3vw;
+}
+
+.p-1 {
+  font-size: 20px;
+  margin: 5px 0px;
+}
+
+
+/* medical recipt */
+/*
+.medical_form_show {
+  width: 90vw;
+  margin: 5vw;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  border: 2px black solid;
+  border-radius: 20px;
+  justify-content: space-around;
+}
+
+.medical_form_show .medi_detail {
+  width: 40vw;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.medical_form_show .medi_detail .label {
+  margin: 5px 20px;
+  font-size: 25px;
+  font-style: bold;
+  display:flex;
+  align-items:center;
+}
+
+.medical_form_show .medi_detail .value {
+  margin: 5px 20px;
+  display:flex;
+  align-items:center;
+}*/
+
+/* medical extra_value */
+
+
+/* .signup-form-container .div-extra{
+  display: flex;
+  justify-content:center;
+} */
+
+
+
+
+.medical_form_show {
+  width: 600px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+}
+
+
+.medical_form_show .medi_detail {
+  display: flex;
+
+  /* background-color: #4CAF50; */
+  flex-direction: row;
+}
+
+.medical_form_show .medi_detail .label {
+  width: 40%;
+  font-size: 23px;
+
+}
+
+.medical_form_show .medi_detail .value {
+  margin: 0px 22px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 20px;
+
+
+}
+.medical_form_show .flex-lmr{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.doc_to_patient a{
+  width: 20vw;
+  height: 40px;
+  display: block;
+  background: lightgreen;
+  color: black;
+  margin: 0px 40vw;
+  padding: 7px 0px 0px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+}
+.doc_to_patient a:hover{
+  background: rgb(100, 197, 100);
+}
+
+
+
+
+/* doctor will see requested patient */
+.doc_patient_req {
+  width: 80vw;
+  margin: 20px ;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.doc_patient_req .child_doc_pat{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px 10vw;
+  border: 1px solid black;
+  border-radius: 14px;
+  background: #f0f0f0;
+}
+.doc_patient_req .child_doc_pat .child_doc_pat_left{
+  font-size: 20px;
+    font-weight: bold;
+    color:black;
+    text-decoration: none;
+    width: 60vw;
+    margin: 14px 0px 6px 20px;
+}
+.doc_patient_req a{
+  text-decoration:none;
+
+} 
+
+.doc_patient_req .child_doc_pat .child_doc_pat_right{
+  margin: 0px 23px 13px 40px;
+  font-size: 19px;
+
+}
